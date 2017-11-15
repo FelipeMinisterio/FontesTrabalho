@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Tela de Cadastro</title>
+
+  <style type="text/css">
+  body {
+	background-image: url("../images/3.jpg");
+    
+    }
+  </style>
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:growl id="growl" sticky="true" showDetail="true" />
+
+		<p:wizard flowListener="#{cadastroBean.onFlowProcess}">
+			<p:tab id="personal" title="Personal information">
+				<p:panel header="Detalhes Pessoais" style="width:30%">
+					<p:messages />
+					<h:panelGrid columns="2" columnsClasses="label,value">
+						<h:outputText value="Primeiro nome: " />
+						<p:inputText value="#{cadastroBean.cliente.nome}" required="true"
+							label="Firstname" />
+
+						<h:outputText value="Sobrenome: " />
+						<p:inputText value="#{cadastroBean.cliente.sobrenome}"
+							required="true" label="Lastname" />
+
+						<h:outputText value="CPF: " />
+						<p:inputText value="#{cadastroBean.cliente.CPF}"
+							mask="999.999.999-99" />
+					</h:panelGrid>
+				</p:panel>
+				<p:button outcome="PaginaInicial.xhtml" value="Voltar"/>
+			</p:tab>
+			
+			<p:tab id="contact" title="Contato">
+				<p:panel header="Detalhes de Contato" style="width:30%">
+					<p:messages />
+					<h:panelGrid columns="2" columnsClasses="label,value">
+						<h:outputText value="Email: " />
+						<p:inputText value="#{cadastroBean.cliente.email}" />
+						<h:outputText value="Senha: " />
+						<p:password id="senha" value="#{cadastroBean.cliente.senha}"
+							feedback="true" inline="true" />
+					</h:panelGrid>
+				</p:panel>
+			</p:tab>
+
+			<p:tab id="creditcard" title="Cartão De Crédito">
+				<p:panel header="Informações Do Cartão De crédito" style="width:30%">
+					<p:messages />
+					<h:panelGrid columns="1" columnClasses="label,value">
+						<h:outputText value="Número do Cartão De Crédito: " />
+						<p:inputText value="#{cadastroBean.cliente.numerocartao}"
+							required="true" label="numerocartao" />
+
+						<h:outputText value="Número De Seguro: " />
+						<p:inputText value="#{cadastroBean.cliente.numseg}"
+							required="true" label="numseg" mask="999" />
+
+						<h:outputText value="Data de Validade do Cartão: " />
+						<p:inputText value="#{cadastroBean.cliente.dataval}"
+							required="true" label="dataval" mask="99/99/9999" />
+
+					</h:panelGrid>
+				</p:panel>
+			</p:tab>
+
+			<p:tab id="confirm" title="Confirmação">
+				<p:panel header="Confirmation" style="width:30%">
+					<h:panelGrid id="confirmation" columns="2"
+						columnsClasses="grid,grid,grid">
+						<h:panelGrid columns="2" columnClasses="label,value">
+							<h:outputText value="Primeiro nome: " />
+							<h:outputText value="#{cadastroBean.cliente.nome}"
+								styleClass="outputLabel" />
+
+							<h:outputText value="Sobrenome: " />
+							<h:outputText value="#{cadastroBean.cliente.sobrenome}"
+								styleClass="outputLabel" />
+
+							<h:outputText value="CPF: " />
+							<h:outputText value="#{cadastroBean.cliente.CPF}"
+								styleClass="outputLabel" />
+
+							<h:outputText value="Número do Cartão De Crédito: " />
+							<h:outputText value="#{cadastroBean.cliente.numerocartao}"
+								styleClass="outputLabel" />
+
+							<h:outputText value="Número De Seguro: " />
+							<h:outputText value="#{cadastroBean.cliente.numseg}"
+								styleClass="outputLabel" />
+
+							<h:outputText value="Data de Validade do Cartão: " />
+							<h:outputText value="#{cadastroBean.cliente.dataval}"
+								styleClass="outputLabel" />
+
+							<h:outputText value="Email: " />
+							<h:outputText value="#{cadastroBean.cliente.email}"
+								styleClass="outputLabel" />
+							<h:outputText value="Senha: " />
+							<h:outputText value="#{cadastroBean.cliente.senha}"
+								styleClass="outputlabel" />
+						</h:panelGrid>
+					</h:panelGrid>
+					<p:commandButton value="Cadastrar"
+						actionListener="#{cadastroBean.insert}">
+						<p:confirm header="Confirmação"
+							message="Todos os dados estão corretos?" icon="ui-icon-alert" />
+					</p:commandButton>
+					<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+						<p:commandButton value="Sim" type="button"
+							styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+						<p:commandButton value="Não" type="button"
+							styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+					</p:confirmDialog>
+				</p:panel>
+			</p:tab>
+		</p:wizard>
+	</h:form>
+</h:body>
+</html>

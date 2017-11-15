@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Perfil</title>
+	  <style type="text/css">
+  body {
+	background-image: url("../images/1.jpg");
+    
+    }
+    </style>
+</h:head>
+<body>
+	<h:form>
+		<p:outputLabel value="Bem vindo(a) #{cadastroBean.cliente.nome}" />
+
+		<p:tab id="perfil" title="Perfil">
+			<p:panel header="Perfil" style="width:30%">
+				<h:panelGrid columns="1" columnsClasses="label,label">
+					<h:outputText value="Nome: #{cadastroBean.cliente.nome} " />
+					<h:outputText value="Sobrenome: #{cadastroBean.cliente.sobrenome}" />
+					<h:outputText value="Email: #{cadastroBean.cliente.email}" />
+					<h:outputText value="CPF: #{cadastroBean.cliente.CPF}" />
+					<h:outputText
+						value="Numero Do Cartão: #{cadastroBean.cliente.numerocartao}" />
+					<h:outputText
+						value="Data de validade do Cartão: #{cadastroBean.cliente.dataval}" />
+					<h:outputText
+						value="Número de Seguro: #{cadastroBean.cliente.numseg}" />
+					<h:outputText value="Pacote Escolhido: #{pacoteBean.pacote.pac_nome}" />
+				</h:panelGrid>
+			</p:panel>
+			<p:commandButton action="PaginaInicial.xhtml" value="Voltar" />
+			<p:commandLink action="Pagamento.xhtml" value="Pagamento"/>
+		</p:tab>
+
+
+	</h:form>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Pagamento</title>
+	  <style type="text/css">
+  body {
+	background-image: url("../images/2.jpg");
+    
+    }
+    </style>
+</h:head>
+<body>
+	<h:form>
+		<h:panelGrid columns="2" columnsClasses="label,label">
+
+			<p:tab id="numcartao" title="Numero Do Cartão De Crédito:">
+				<p:panel header="Cartão De Crédito">
+					<p:messages />
+					<h:panelGrid columns="2" columnsClasses="label,value">
+						<h:outputText value="Número Do Cartão De Crédito: " />
+						<p:outputLabel value="#{cadastroBean.cliente.numerocartao}" />
+
+						<h:outputText value="Data da Validade: " />
+						<h:outputText value="#{cadastroBean.cliente.dataval}" />
+
+						<h:outputText value="Número de Seguro: " />
+						<h:outputText value="#{cadastroBean.cliente.numseg}" />
+					</h:panelGrid>
+				</p:panel>
+			</p:tab>
+		</h:panelGrid>
+		<img
+			src="http://2.bp.blogspot.com/-nHIImQ0COyE/VQzZViW5T-I/AAAAAAAADDY/iloAJ-i8sqg/s1600/pct.jpg"
+			vspace="10px" hspace="15px" border="10px" />
+
+		<p:panelGrid columns="3">
+			<p:panel header="Pacote Fit HD" style="width:70%">
+					<p:outputLabel value="49,90" />
+					<p:commandButton value="Comprar"
+						actionListener="#{pacoteBean.insert('Pacote Fit HD',49.90,cadastroBean.cliente.id)}"
+						image="http://2.bp.blogspot.com/-nHIImQ0COyE/VQzZViW5T-I/AAAAAAAADDY/iloAJ-i8sqg/s1600/pct.jpg" align="center"/>
+			</p:panel>
+			<p:panel header="Pacote Premium HD" style="width:70%">
+					<p:outputLabel value="69,90" />
+					<p:commandButton value="Comprar"
+						actionListener="#{pacoteBean.insert('Pacote Premium HD',69.90,cadastroBean.cliente.id)}"
+						image="http://2.bp.blogspot.com/-nHIImQ0COyE/VQzZViW5T-I/AAAAAAAADDY/iloAJ-i8sqg/s1600/pct.jpg" />
+			</p:panel>
+			<p:panel header="Pacote Full HD" style="width:70%">
+					<p:outputLabel value="99,90" />
+					<p:commandButton value="Comprar"
+						actionListener="#{pacoteBean.insert('Pacote Full HD',99.90,cadastroBean.cliente.id)}"
+						image="http://2.bp.blogspot.com/-nHIImQ0COyE/VQzZViW5T-I/AAAAAAAADDY/iloAJ-i8sqg/s1600/pct.jpg" />
+			</p:panel>
+			</p:panelGrid>
+	</h:form>
+</body>
+</html>
