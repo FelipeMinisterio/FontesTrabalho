@@ -7,19 +7,31 @@
 <h:head>
 	<title>Tela de Cadastro</title>
 
-  <style type="text/css">
-  body {
+	<style type="text/css">
+body {
 	background-image: url("../images/3.jpg");
-    
-    }
-  </style>
+	background-size: 1600px 800px;
+}
+
+.ui-wizard-content {
+	width: 1930px;
+}
+
+.ui-wizard-nav-next {
+	padding-top: 0px;
+	top: auto;
+	bottom: 36px;
+	left: auto;
+	right: 10px;
+}
+</style>
 </h:head>
 
 <h:body>
 	<h:form>
 		<p:growl id="growl" sticky="true" showDetail="true" />
-
-		<p:wizard flowListener="#{cadastroBean.onFlowProcess}">
+		<p:wizard flowListener="#{cadastroBean.onFlowProcess}"
+			style="width:600px">
 			<p:tab id="personal" title="Personal information">
 				<p:panel header="Detalhes Pessoais" style="width:30%">
 					<p:messages />
@@ -37,9 +49,9 @@
 							mask="999.999.999-99" />
 					</h:panelGrid>
 				</p:panel>
-				<p:button outcome="PaginaInicial.xhtml" value="Voltar"/>
+				<p:button outcome="PaginaInicial.xhtml" value="Voltar" />
 			</p:tab>
-			
+
 			<p:tab id="contact" title="Contato">
 				<p:panel header="Detalhes de Contato" style="width:30%">
 					<p:messages />

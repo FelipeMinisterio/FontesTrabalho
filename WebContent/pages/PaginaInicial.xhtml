@@ -8,20 +8,40 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<title>WatchWeb</title>
-	<style type="text/css">
-
-body{
-	background-image: url("../images/8.png");
+	<style>
+body {
+	background-image: url("../images/10.png");
 	background-repeat: no-repeat;
-	background-size: 1950px 1000px;
+	background-size: 1600px 800px;
+}
+
+.buttons .apply {
+	left: 530px;
+	top: 530px;
+	background-color: white;
+	color: black;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.buttons .apply2 {
+	left: 700px;
+	top: 530px;
+	background-color: white;
+	color: black;
+	padding-left: 40px;
+	padding-right: 40px;
 }
 </style>
 </h:head>
 <body>
 	<h:form>
-
-			<p:commandButton value="Cadastrar" action="Cadastro.xhtml" />
-		<p:commandButton value="Login" action="Login2.xhtml" />
+		<div class="buttons">
+			<p:commandButton value="Cadastrar" action="Cadastro.xhtml"
+				styleClass="apply" />
+			<p:commandButton value="Login" action="Login2.xhtml"
+				styleClass="apply2" />
+		</div>
 	</h:form>
 </body>
 </html>

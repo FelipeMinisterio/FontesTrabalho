@@ -16,7 +16,7 @@ public class CadastroBean {
 	private Cadastro cliente = new Cadastro();
 	private boolean skip;
 
-	public void redirecionar(String html)/*    */ throws IOException {
+	public void redirecionar(String html) throws IOException {
 		FacesContext.getCurrentInstance().getExternalContext().redirect(html);
 	}
 
@@ -57,4 +57,6 @@ public class CadastroBean {
 		}
 		return event.getNewStep();
 	}
+	
+	
 }

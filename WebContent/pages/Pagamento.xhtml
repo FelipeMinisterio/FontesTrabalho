@@ -11,8 +11,13 @@
 	  <style type="text/css">
   body {
 	background-image: url("../images/2.jpg");
-    
+    background-size: 1600px 820px;
     }
+   #position{
+   top: 500px;
+  position: absolute;
+   
+   }
     </style>
 </h:head>
 <body>
@@ -35,30 +40,29 @@
 				</p:panel>
 			</p:tab>
 		</h:panelGrid>
-		<img
-			src="http://2.bp.blogspot.com/-nHIImQ0COyE/VQzZViW5T-I/AAAAAAAADDY/iloAJ-i8sqg/s1600/pct.jpg"
-			vspace="10px" hspace="15px" border="10px" />
+		<img src="http://2.bp.blogspot.com/-nHIImQ0COyE/VQzZViW5T-I/AAAAAAAADDY/iloAJ-i8sqg/s1600/pct.jpg"
+			vspace="10px" hspace="15px" border="10px"/>
 
-		<p:panelGrid columns="3">
-			<p:panel header="Pacote Fit HD" style="width:70%">
-					<p:outputLabel value="49,90" />
+
+			<p:panel header="Pacote Fit HD" style="position:absolute; top:280px; left:75px;width:10%">
+					<p:outputLabel value="49,90"/>
 					<p:commandButton value="Comprar"
 						actionListener="#{pacoteBean.insert('Pacote Fit HD',49.90,cadastroBean.cliente.id)}"
 						image="http://2.bp.blogspot.com/-nHIImQ0COyE/VQzZViW5T-I/AAAAAAAADDY/iloAJ-i8sqg/s1600/pct.jpg" align="center"/>
 			</p:panel>
-			<p:panel header="Pacote Premium HD" style="width:70%">
+			<p:panel header="Pacote Premium HD" style="position:absolute; top:280px; left:300px;width:10%">
 					<p:outputLabel value="69,90" />
 					<p:commandButton value="Comprar"
 						actionListener="#{pacoteBean.insert('Pacote Premium HD',69.90,cadastroBean.cliente.id)}"
 						image="http://2.bp.blogspot.com/-nHIImQ0COyE/VQzZViW5T-I/AAAAAAAADDY/iloAJ-i8sqg/s1600/pct.jpg" />
 			</p:panel>
-			<p:panel header="Pacote Full HD" style="width:70%">
+			<p:panel header="Pacote Full HD" style="position:absolute; top:280px; left:525px;width:10%">
 					<p:outputLabel value="99,90" />
 					<p:commandButton value="Comprar"
 						actionListener="#{pacoteBean.insert('Pacote Full HD',99.90,cadastroBean.cliente.id)}"
 						image="http://2.bp.blogspot.com/-nHIImQ0COyE/VQzZViW5T-I/AAAAAAAADDY/iloAJ-i8sqg/s1600/pct.jpg" />
 			</p:panel>
-			</p:panelGrid>
+
 	</h:form>
 </body>
 </html>

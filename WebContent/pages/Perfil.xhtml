@@ -12,13 +12,18 @@
 	  <style type="text/css">
   body {
 	background-image: url("../images/1.jpg");
-    
+    background-size:1600px 800px;
+    }
+    h1{
+   	position: absolute;
+   	left: 550px;
+    top:230px;
     }
     </style>
 </h:head>
 <body>
 	<h:form>
-		<p:outputLabel value="Bem vindo(a) #{cadastroBean.cliente.nome}" />
+		<h1 style="color:white; font-size: 70px; " ><u>Bem vindo(a) #{cadastroBean.cliente.nome}</u></h1>
 
 		<p:tab id="perfil" title="Perfil">
 			<p:panel header="Perfil" style="width:30%">
@@ -37,7 +42,7 @@
 				</h:panelGrid>
 			</p:panel>
 			<p:commandButton action="PaginaInicial.xhtml" value="Voltar" />
-			<p:commandLink action="Pagamento.xhtml" value="Pagamento"/>
+			<p:commandButton action="Pagamento.xhtml" value="Trocar de Pacote" style="position:absolute;left:315px;"/>
 		</p:tab>
 
 
