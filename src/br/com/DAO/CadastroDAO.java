@@ -69,7 +69,7 @@ public class CadastroDAO {
 				loggedIn = true;
 				System.out.println("Login Sucessful!");
 				message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Welcome", cad.getNome());
-				FacesContext.getCurrentInstance().getExternalContext().redirect("Perfil.xhtml");
+				FacesContext.getCurrentInstance().getExternalContext().redirect("Filmes.xhtml");
 				Cadastro localCadastro1 = cad;
 				return localCadastro1;
 			}

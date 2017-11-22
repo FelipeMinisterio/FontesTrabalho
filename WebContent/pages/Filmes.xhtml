@@ -9,42 +9,64 @@
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<title>Filmes</title>
-	
-<script type="text/javascript">
-var myVar = setInterval(function(){ myTimer() }, 1000);
-
-function myTimer() {
-    var d = new Date();
-    var t = d.toLocaleTimeString();
-    document.getElementById("demo").innerHTML = t;
+	<style>
+#cabecalho{
+background: black;
+border:2px solid black;
 }
 
-function trocaImagem(){
-	
-	var lista = [];
-	for(int i = 0; i <=5;i++){
-		lista.push(i+".jpg");
-	}
-	document.getElementById("demo").innerHTML = lista;
-	
+#filmes{
+background:black;
+border:2px solid black;
 }
-</script>	
-	
+
+#cabecalho .ui-layout-unit-content {
+	background-image: url('../images/10.png');
+	min-height: 300px;
+	background-size: 1550px 300px;
+
+}
+#filmes .ui-layout-unit-content {
+	background-image: url('../images/6.jpg');
+	min-height:400px;
+}
+</style>
 </h:head>
-<body>
+<body style="background-color: black">
+	<p:layout>
 
-<p:layout >
-    <p:layoutUnit position ="north" style="min-height:300px;">
-        NORTH
-        <p id="demo"></p>
-        
-    </p:layoutUnit>
- 
-    <p:layoutUnit position="center" style="min-height:400px;">
-        CENTER
-    </p:layoutUnit>
-</p:layout>
+		<p:layoutUnit position="north" id="cabecalho">
+			<h:form>
+				<p:commandButton action="Perfil.xhtml" value="Ir para Perfil" style="position:absolute;left:600px;top:200px;"/>
+				<p:commandButton value="Deslogar"
+					oncomplete="handleLoginRequest(xhrx, status, args)"
+					action="PaginaInicial.xhtml" style="position:absolute;left:790px;top:200px;"/>
+			</h:form>
 
+		</p:layoutUnit>
+
+		<p:layoutUnit position="center" id="filmes">
+			<h1 style="text-align: center; color:white;">Filmes</h1>
+
+			<iframe width="350" height="230"
+				src="https://www.youtube.com/embed/w5zQKsbp0ks" style="border-style: outset; border-width: 7px;"> </iframe>
+			<iframe width="350" height="230"
+				src="https://www.youtube.com/embed/3Qr2BWIqZgg" style="border-style: outset; border-width: 7px;"> </iframe>
+			<iframe width="350" height="230"
+				src="https://www.youtube.com/embed/rWCvBC1fpp8" style="border-style: outset; border-width: 7px;"> </iframe>
+			<iframe width="350" height="230"
+				src="https://www.youtube.com/embed/H3sBHK6G1mY" style="border-style: outset; border-width: 7px;"> </iframe>
+			<iframe width="350" height="230"
+				src="https://www.youtube.com/embed/x2I4c3qok8w" style="border-style: outset; border-width: 7px;"> </iframe>
+			<iframe width="350" height="230"
+				src="https://www.youtube.com/embed/tn7peSe5xMU" style="border-style: outset; border-width: 7px;"> </iframe>
+			<iframe width="350" height="230"
+				src="https://www.youtube.com/embed/rLh32KZ2PnU" style="border-style: outset; border-width: 7px;"> </iframe>
+			<iframe width="350" height="230"
+				src="https://www.youtube.com/embed/zHJfY4aoBAA" style="border-style: outset; border-width: 7px;"> </iframe>
+
+		</p:layoutUnit>
+	</p:layout>
 
 </body>
 </html>

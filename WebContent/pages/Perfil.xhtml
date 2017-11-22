@@ -16,14 +16,16 @@
     }
     h1{
    	position: absolute;
-   	left: 550px;
-    top:230px;
+   	left: 490px;
+    top:300px;
+    font-family: fantasy;
+    background-color: white;
     }
     </style>
 </h:head>
 <body>
 	<h:form>
-		<h1 style="color:white; font-size: 70px; " ><u>Bem vindo(a) #{cadastroBean.cliente.nome}</u></h1>
+		<h1 style="color:#ff3300; font-size: 80px; "><u>Bem vindo(a) #{cadastroBean.cliente.nome}</u></h1>
 
 		<p:tab id="perfil" title="Perfil">
 			<p:panel header="Perfil" style="width:30%">
@@ -43,6 +45,7 @@
 			</p:panel>
 			<p:commandButton action="PaginaInicial.xhtml" value="Voltar" />
 			<p:commandButton action="Pagamento.xhtml" value="Trocar de Pacote" style="position:absolute;left:315px;"/>
+			<p:commandButton action="Filmes.xhtml" value="Ir para Filmes" style="position:absolute;left:130px;"/>
 		</p:tab>
 
 
